@@ -1,0 +1,70 @@
+diff --git a/mediapipe/modules/face_landmark/BUILD b/mediapipe/modules/face_landmark/BUILD
+index f155e46d..8bd23260 100644
+--- a/mediapipe/modules/face_landmark/BUILD
++++ b/mediapipe/modules/face_landmark/BUILD
+@@ -39,6 +39,9 @@ mediapipe_simple_subgraph(
+         "//mediapipe/calculators/util:landmark_projection_calculator",
+         "//mediapipe/calculators/util:thresholding_calculator",
+         "//mediapipe/framework/tool:switch_container",
++
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+     ],
+ )
+ 
+@@ -60,6 +63,10 @@ mediapipe_simple_subgraph(
+         "//mediapipe/calculators/util:landmark_projection_calculator",
+         "//mediapipe/calculators/util:thresholding_calculator",
+         "//mediapipe/framework/tool:switch_container",
++
++        "//mediapipe/calculators/core:concatenate_detection_vector_calculator",
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+     ],
+ )
+ 
+@@ -81,6 +88,10 @@ mediapipe_simple_subgraph(
+         "//mediapipe/calculators/util:association_norm_rect_calculator",
+         "//mediapipe/calculators/util:collection_has_min_size_calculator",
+         "//mediapipe/modules/face_detection:face_detection_short_range_cpu",
++
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/core:split_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+     ],
+ )
+ 
+@@ -102,6 +113,10 @@ mediapipe_simple_subgraph(
+         "//mediapipe/calculators/util:association_norm_rect_calculator",
+         "//mediapipe/calculators/util:collection_has_min_size_calculator",
+         "//mediapipe/modules/face_detection:face_detection_short_range_gpu",
++
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/core:split_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+     ],
+ )
+ 
+@@ -113,6 +128,10 @@ mediapipe_simple_subgraph(
+         ":face_landmark_front_cpu",
+         "//mediapipe/calculators/core:flow_limiter_calculator",
+         "//mediapipe/calculators/image:image_transformation_calculator",
++
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/core:split_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+         "//mediapipe/calculators/util:from_image_calculator",
+     ],
+ )
+@@ -125,6 +144,10 @@ mediapipe_simple_subgraph(
+         ":face_landmark_front_gpu",
+         "//mediapipe/calculators/core:flow_limiter_calculator",
+         "//mediapipe/calculators/image:image_transformation_calculator",
++
++        "//mediapipe/calculators/core:concatenate_vector_calculator",
++        "//mediapipe/calculators/core:split_vector_calculator",
++        "//mediapipe/calculators/util:landmarks_smoothing_calculator",
+         "//mediapipe/calculators/util:from_image_calculator",
+     ],
+ )
+ 

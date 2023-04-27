@@ -42,6 +42,7 @@ http_archive(
         "@//third_party:mediapipe_visibility.diff",
         "@//third_party:mediapipe_model_path.diff",
         "@//third_party:mediapipe_extension.diff",
+        "@//third_party:landmarks_smoothing_calculator.diff",
         # "@//third_party:mediapipe_emscripten_patch.diff",
     ],
     sha256 = "437de7632f37b95424106d689f9722c280a571fa452675a22c708cb851395ea7",
