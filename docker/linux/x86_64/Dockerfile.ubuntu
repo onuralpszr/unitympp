@@ -7,7 +7,7 @@ ARG ANDROID_SDK_BUILD_TOOLS_VERSION=30.0.3
 ARG ANDROID_SDK_VERSION=30
 ARG ANDROID_NDK_VERSION=21.4.7075529
 
-FROM ubuntu:18.04 AS base
+FROM ubuntu:latest AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -70,8 +70,8 @@ WORKDIR /tmp
 COPY --from=android /opt/android /opt/android
 
 # Setup Python
-RUN add-apt-repository -y ppa:deadsnakes/ppa && \
-    apt-get install -y --no-install-recommends python3.9-dev python3.9-distutils && \
+RUN add-apt-repository -y universe && \
+    apt-get install -y python3.9-dev python3.9-distutils && \
     curl -L https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3.9 get-pip.py && \
     ln -s /usr/bin/python3.9 /usr/local/bin/python
