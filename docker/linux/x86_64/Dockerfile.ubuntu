@@ -33,7 +33,7 @@ RUN apt-get update && \
         software-properties-common \
         sudo \
         unzip \
-        zip && \
+        zip
 
 
 FROM base AS android
