@@ -221,18 +221,12 @@ jobs:
         with:
           name: ${{ inputs.packageName }}-MediaPipeUnity.framework
           path: Packages/com.github.homuler.mediapipe/Runtime/Plugins/iOS/MediaPipeUnity.framework
-      - name: Download mediapipe_c.dll
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ inputs.packageName }}-mediapipe_c.dll
-          path: Packages/com.github.homuler.mediapipe/Runtime/Plugins
 
       - name: Remove unused meta files
         run: |
           cd Packages/com.github.homuler.mediapipe/Runtime/Plugins
           rm libmediapipe_c.bc.meta
           rm libopencv_world.*.meta
-          rm opencv_world*.dll.meta
 
       - name: Zip all
         run: |
@@ -285,7 +279,3 @@ jobs:
           name: ${{ inputs.packageName }}-MediaPipeUnity.framework
           failOnError: false
 
-      - uses: geekyeggo/delete-artifact@v2
-        with:
-          name: ${{ inputs.packageName }}-mediapipe_c.dll
-          failOnError: false
